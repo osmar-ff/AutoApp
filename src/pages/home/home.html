@@ -3,16 +3,31 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Principal</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content padding class="center">
+  <div *ngIf = "conectado">
+      <button ion-button color= "danger" round outline (click)="logEvent($event)" >Desconectar</button>
+      <ion-list>
+        <ion-item>
+          <ion-label>Lâmpada</ion-label>
+          <ion-toggle [(ngModel)]="lamp" ></ion-toggle>
+        </ion-item>
+        <ion-item>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+          <h2>{{rele}}</h2>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox [(ngModel)]="check" ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+        <ion-range min="0" max="100" step="25" pin="true" [(ngModel)]="dimmer"></ion-range>
+        </ion-item>
+      </ion-list>
+  </div>
+  <div *ngIf = "!conectado">
+      <button ion-button color= "secondary" round outline (click)="logEvent($event)" >Conectar</button>
+  </div> 
 </ion-content>
