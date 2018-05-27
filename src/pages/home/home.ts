@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { NavController, Platform, AlertController } from 'ionic-angular';
 
 import { MqttServiceProvider } from '../../providers/mqtt-service/mqtt-service';
 
@@ -14,7 +14,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
               public mqtt: MqttServiceProvider,
-              public platform : Platform) {
+              public platform : Platform,
+              public alertCtrl: AlertController) {
                 this.platform.pause.subscribe(() => {
                   this.mqtt.disconnect();
               });
@@ -24,6 +25,19 @@ export class HomePage {
               });
       
              this.connect();
+  }
+
+  aviso() {
+    let alert = this.alertCtrl.create({
+      title: 'Aviso',
+      subTitle: 'Esse recurso está em implementação!',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+  set dimmer(valor){
+    this.aviso();
   }
   
   get lamp(){
