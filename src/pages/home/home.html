@@ -13,17 +13,12 @@
       <ion-list>
         <ion-item>
           <ion-label>Lâmpada</ion-label>
-          <ion-toggle [(ngModel)]="lamp" ></ion-toggle>
+          <ion-toggle [(ngModel)]="lamp" ><ion-label>Lâmpada</ion-label></ion-toggle>
         </ion-item>
-        <ion-item>
-
-          <h2>{{rele}}</h2>
-        </ion-item>
-        <ion-item>
-          <ion-checkbox [(ngModel)]="check" ></ion-checkbox>
-        </ion-item>
-        <ion-item>
-        <ion-range min="0" max="100" step="25" pin="true" [(ngModel)]="dimmer"></ion-range>
+        <ion-item> 
+        <ion-range min="0" max="100" step="25" pin="true" [(ngModel)]="dimmer"><ion-label range-left>
+            Dimmer
+          </ion-label></ion-range>
         </ion-item>
       </ion-list>
   </div>

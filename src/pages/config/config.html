@@ -17,5 +17,15 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+        <ion-label>Notificações</ion-label> 
+        <ion-toggle [(ngModel)]="push" ></ion-toggle>
+    </ion-item>
+    <ion-item>
+        <ion-label>Economia de Energia</ion-label> 
+        <ion-toggle [(ngModel)]="energy" ></ion-toggle>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
