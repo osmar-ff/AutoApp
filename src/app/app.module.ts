@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SobrePage } from '../pages/sobre/sobre';
 import { ConfigPage } from '../pages/config/config';
+import { MqttServiceProvider } from '../providers/mqtt-service/mqtt-service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ConfigPage } from '../pages/config/config';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MqttServiceProvider
   ]
 })
 export class AppModule {}
