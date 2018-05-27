@@ -7,22 +7,22 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="center">
-  <div *ngIf = "conectado">
-      <button ion-button color= "danger" round outline (click)="disconnect($event)" >Desconectar</button>
-      <ion-list>
-        <ion-item>
+<ion-content padding class="center" style="background-color: #7676E2; color:white;">
+  <div *ngIf = "conectado" style="background-color: #7676E2; color:white;">
+      <button ion-button color= "danger" round (click)="disconnect($event)" >Desconectar</button>
+      <ion-list style="background-color: #7676E2; color:white;">
+        <ion-item style="background-color: #7676E2; color:white;">
           <ion-label>Lâmpada</ion-label>
           <ion-toggle [(ngModel)]="lamp" ><ion-label>Lâmpada</ion-label></ion-toggle>
         </ion-item>
-        <ion-item> 
+        <ion-item style="background-color: #7676E2; color:white;"> 
         <ion-range min="0" max="100" step="25" pin="true" [(ngModel)]="dimmer"><ion-label range-left>
             Dimmer
           </ion-label></ion-range>
         </ion-item>
       </ion-list>
   </div>
-  <div *ngIf = "!conectado">
-      <button ion-button color= "secondary" round outline (click)="connect($event)" >Conectar</button>
+  <div *ngIf = "!conectado" style="background-color: #7676E2; color:white;">
+      <button ion-button color= "secondary" round (click)="connect($event)" >Conectar</button>
   </div> 
 </ion-content>
